@@ -40,6 +40,15 @@ app.get('/', async (req, res) => {
     res.render('index', {title: 'Welcome to Cheap Deals Mall', malls});
 });
 
+//show mall information
+app.get('/mall/:id', async (req, res) => {
+    var { id } = req.params;
+    var _id = mongoose.Types.ObjectId(id);
+    const mallItem = await mall.findById({ _id });
+    // console.log(mallItem);
+    mallItem.name = titleCase.titleCase(mallItem.name);
+    res.render('mall/show', { title: `CDM - ${mallItem.name}`, mallItem });
+})
 
 // --Listener--
 app.listen(3000, () => {

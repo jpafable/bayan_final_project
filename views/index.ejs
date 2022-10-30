@@ -10,13 +10,13 @@
     <%- include('partials/header') %>
   </header>
   <main class="container">
-    <h2 class="display-2">Let's see what's happening! <small class="text-muted">Some of the items may be on sale.</small></h2>
+    <h3 class="display-3">Let's see what's happening! <small class="text-muted">Some of the items may be on sale.</small></h3>
     <section class="row gx-2">
       <% for (let mall of malls){ %>
       <div class="card col-md-3 text-white bg-info mx-1 my-1">
-        <img class="card-img-top img-fluid" src="https://www.fillmurray.com/268/358" alt="Title">
+        <img class="card-img-top img-fluid" src="https://www.fillmurray.com/268/182" alt="Title">
         <div class="card-body">
-          <h3 class="card-title"><%= mall.name %></h3>
+          <h3 class="card-title"><a class="link-light" href="/mall/<%= mall._id %>"><%= mall.name %></a></h3>
           <p class="card-text"><%= mall.shortDescription %></p>
         </div>
       </div>
