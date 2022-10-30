@@ -31,9 +31,13 @@ app.use(methodOverride('_method'));
 // --Routes--
 
 //Landing Page
-app.get('/', (req, res) => {
-
-    res.render('index', {title: 'Welcome to Cheap Deals Mall'});
+app.get('/', async (req, res) => {
+    const malls = await mall.find({}).collation({ locale: 'en', strength: 2 }).sort({ name: 1 });
+    //use title case
+    for (let mallItem of malls) {
+        mallItem.name = titleCase.titleCase(mallItem.name);
+    }
+    res.render('index', {title: 'Welcome to Cheap Deals Mall', malls});
 });
 
 

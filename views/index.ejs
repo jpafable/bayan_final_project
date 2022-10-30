@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
- <%- include('partials/head_def') %>
+  <%- include('partials/head_def') %>
 </head>
 
 <body>
@@ -10,7 +10,18 @@
     <%- include('partials/header') %>
   </header>
   <main class="container">
-<h1>Hello World</h1>
+    <h2 class="display-2">Let's see what's happening! <small class="text-muted">Some of the items may be on sale.</small></h2>
+    <section class="row gx-2">
+      <% for (let mall of malls){ %>
+      <div class="card col-md-3 text-white bg-info mx-1 my-1">
+        <img class="card-img-top img-fluid" src="https://www.fillmurray.com/268/358" alt="Title">
+        <div class="card-body">
+          <h3 class="card-title"><%= mall.name %></h3>
+          <p class="card-text"><%= mall.shortDescription %></p>
+        </div>
+      </div>
+      <% }%>
+    </section>
   </main>
   <footer>
     <%- include('partials/footer') %>
@@ -18,11 +29,11 @@
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 </body>
 
 </html>

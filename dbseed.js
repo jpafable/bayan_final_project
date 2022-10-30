@@ -48,10 +48,10 @@ const malls = [
         address: "North Avenue corner EDSA, Quezon City, 1100 Metro Manila"
     },
     {
-        name: "Sm City North Edsa",
+        name: "SM Aura",
         brands: [
             {
-                name: "Marugame",
+                name: "Sizzling Pepper Steak",
             },
             {
                 name: "Uniqlo",
@@ -65,16 +65,16 @@ const malls = [
         address: "26th Street Corner McKinley Parkway Bonifacio Global City, Taguig City Philippines"
     },
     {
-        name: "Sm City North Edsa",
+        name: "SM Seaside City Cebu",
         brands: [
             {
-                name: "Marugame",
+                name: "Dimsum Break",
             },
             {
-                name: "Uniqlo",
+                name: "Sunburst Fried Chicken",
             },
             {
-                name: "Penshoppe",
+                name: "Watsons",
             }
         ],
         uploadedBy: "admin",
