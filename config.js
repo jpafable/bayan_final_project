@@ -13,5 +13,10 @@ function Environment() {
 config.DEV = new Environment();
 config.DEV.MONGOOSECONNURL = 'mongodb://localhost:27017/cheapShop';
 
+//log messages
+config.LOG = {};
+config.LOG.MONGOOSECONNSUCC = "Mongoose connection succeeded.";
+config.LOG.MONGOOSECONNFAIL = "Error encountered on Mongoose Connection.";
+config.LOG.EXPRESSLISTENSUCC = "Listening on port 3000";
 
 module.exports = config;

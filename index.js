@@ -6,14 +6,15 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const titleCase = require('title-case');
 const CONFIG = require('./config');
+const mall = require('./models/mall');
 
-//Configuration
+// --Configuration--
 mongoose.connect(CONFIG.DEV.MONGOOSECONNURL)
     .then(() => {
-        console.log("Mongoose connection succeeded.");
+        console.log(CONFIG.LOG.MONGOOSECONNSUCC);
     })
     .catch(err => {
-        console.log("Error encountered on Mongoose Connection.");
+        console.log(CONFIG.LOG.MONGOOSECONNFAIL);
         console.error(err);
     });
 
@@ -24,10 +25,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-//Global values
+// --Global values--
 
 
-//Routes
+// --Routes--
 
 //Landing Page
 app.get('/', (req, res) => {
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
 });
 
 
-//Listener
+// --Listener--
 app.listen(3000, () => {
-    console.log("Listening on port 3000");
+    console.log(CONFIG.LOG.EXPRESSLISTENSUCC);
 })
