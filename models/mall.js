@@ -35,7 +35,16 @@ const mallSchema = new mongoose.Schema({
         long:{
             type: mongoose.Types.Decimal128
         },
-    }
+    },
+    userReviews: [{
+        username: String,
+        review: String,
+        rating:{
+            type: Number,
+            min: 0,
+            max: 5
+        }
+    }]
 });
 
 const mall = mongoose.model('Mall', mallSchema);
